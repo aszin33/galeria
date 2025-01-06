@@ -325,7 +325,7 @@ h1 {
 
 .highlight {
   color: transparent;
-  background: linear-gradient(to right, #eaff04, rgb(255, 0, 217));
+  background: linear-gradient(to right, #ffffff, rgb(255, 0, 217));
   -webkit-background-clip: text;
   background-clip: text;
   display: inline-block;
@@ -360,11 +360,20 @@ h1 {
 }
 
 p {
+  font-size: 19px;
   width: 50%; /* Ajuste a largura conforme necessário */
   text-align: left; /* Alinha o texto à esquerda */
   word-wrap: break-word; /* Quebra o texto automaticamente ao atingir a largura do contêiner */
   white-space: normal; /* Permite que o texto quebre a linha */
 }
 .header1 {
-  background-color: white;
+  background-color: rgba(248, 255, 124, 0.741);
+  height: 100%;
+}
+.letra1 {
+  font-size: 19px;
+    color: red;
+    text-align: left; /* Alinha o texto à esquerda */
+    word-wrap: break-word; /* Quebra o texto automaticamente ao atingir a largura do contêiner */
+    white-space: normal; 
 }
