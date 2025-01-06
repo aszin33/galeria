@@ -3,7 +3,7 @@
     body {
       font-size: 14px;
     }
-    
+  
     .nav-container {
       height: 50px;
     }
@@ -44,7 +44,7 @@
     .highlight {
       font-size: 30px;
     }
-    
+  
     p {
       width: 100%;
       font-size: 14px;
@@ -53,6 +53,19 @@
     .image-footer img {
       width: 40px;
       height: 40px;
+    }
+  
+    /* Ajustes para a header1 */
+    .header1 {
+      height: auto; /* Ajustando para a altura se adaptar ao conteúdo */
+      min-height: 100vh; /* Faz com que a header1 ocupe pelo menos a altura da tela */
+      padding-bottom: 40px; /* Garante espaço suficiente para o conteúdo */
+    }
+    
+    /* Rodapé das imagens */
+    .image-footer {
+      margin-top: 20px;
+      margin-bottom: 50px; /* Desce um pouco o rodapé para telas menores */
     }
   }
   
