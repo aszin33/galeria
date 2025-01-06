@@ -24,7 +24,7 @@ function updatePhoto() {
     const photo = document.getElementById('current-photo');
     photo.style.transform = 'scale(0.9)';
     setTimeout(() => {
-        photo.src = `/images/isab${currentPhotoIndex}.jpg`; // Atualiza a foto principal
+        photo.src = `images/isab${currentPhotoIndex}.jpg`; // Atualiza a foto principal
         photo.style.transform = 'scale(1)';
         updateFooterHighlight();
     }, 300);
