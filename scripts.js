@@ -1,5 +1,5 @@
 let currentPhotoIndex = 1;
-const maxPhotos = 19; // Alterado para 20 fotos
+const maxPhotos = 19; // Alterado para 19 fotos
 
 // Função para alterar para a foto anterior
 function prevPhoto() {
