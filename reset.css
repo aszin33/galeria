@@ -1,0 +1,87 @@
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+    
+    .nav-container {
+      height: 50px;
+    }
+  
+    .h1-container {
+      font-size: 24px;
+      margin-left: 20px;
+    }
+  
+    .container {
+      height: auto;
+      padding: 20px;
+    }
+  
+    .photo-player {
+      width: 100%;
+      max-width: 100%;
+      margin: 10px 0;
+    }
+  
+    #current-photo {
+      max-height: 300px;
+    }
+  
+    .nav-btn {
+      font-size: 18px;
+      padding: 10px;
+    }
+  
+    hr {
+      margin: 20px 0;
+    }
+  
+    h1 {
+      font-size: 40px;
+    }
+  
+    .highlight {
+      font-size: 30px;
+    }
+    
+    p {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .image-footer img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .h1-container {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+  
+    h1 {
+      font-size: 35px;
+    }
+  
+    .highlight {
+      font-size: 25px;
+    }
+  
+    .nav-btn {
+      font-size: 16px;
+      padding: 8px;
+    }
+  
+    #current-photo {
+      max-height: 250px;
+    }
+  
+    .image-footer img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  

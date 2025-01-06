@@ -1,0 +1,370 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fcf1c6;
+  position: relative;
+  min-height: 100vh; /* Permite altura mínima igual ao viewport */
+  overflow-y: auto; /* Adicionado rolamento na página */
+}
+
+/* Efeito das Tulipas (Partículas) */
+.tulipas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* As tulipas ficam atrás do conteúdo */
+}
+
+.tulipa {
+  position: absolute;
+  width: 50px;
+  height: 120px; /* Tamanho das tulipas */
+  animation: fall 6s infinite ease-in-out, sway 4s ease-in-out infinite; /* Efeitos de queda e balançando para o lado */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Cabeça da tulipa (flor) */
+.tulipa::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 40px; /* Aumentei o tamanho da cabeça da flor */
+  height: 40px;
+  background-color: yellow;
+  border-radius: 50% 50% 0 0; /* Forma arredondada da cabeça */
+  transform: translateX(-50%) rotate(-45deg);
+  z-index: 1;
+}
+
+/* Pétalas ajustadas */
+.tulipa::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 60px; /* Aumentei a largura das pétalas */
+  height: 60px; /* Aumentei a altura das pétalas */
+  background-color: yellow;
+  border-radius: 50% 50% 0 0;
+  transform: translateX(-50%) rotate(45deg);
+  z-index: 0;
+}
+
+/* Caule da tulipa */
+.tulipa::after {
+  content: '';
+  position: absolute;
+  top: 40px; /* Agora o caule começa diretamente da base da cabeça da flor */
+  left: 50%;
+  width: 6px; /* Largura do caule */
+  height: 100px; /* Altura do caule */
+  background-color: green;
+  transform: translateX(-50%);
+  z-index: -1; /* Para ficar atrás da flor */
+}
+
+.tulipa .petala-1,
+.tulipa .petala-2 {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 25px;
+  height: 50px;
+  background-color: yellow;
+  border-radius: 50% 50% 0 0;
+}
+
+.tulipa .petala-1 {
+  transform: rotate(-45deg) translateX(-50%);
+  z-index: -1;
+}
+
+.tulipa .petala-2 {
+  transform: rotate(45deg) translateX(-50%);
+  z-index: -1;
+}
+
+/* Caule da tulipa - agora maior */
+.tulipa .caule {
+  content: '';
+  position: absolute;
+  bottom: -30px; /* Ajustado para o caule ficar maior e se conectar corretamente */
+  left: 50%;
+  width: 6px; /* Largura do caule */
+  height: 80px; /* Aumentei o tamanho do caule */
+  background-color: green;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Animação de queda das tulipas */
+@keyframes fall {
+  0% {
+      top: -60px;
+      left: calc(100% * var(--random-x)); /* Aleatoriedade no movimento horizontal */
+      opacity: 1;
+  }
+  50% {
+      top: 50%; /* Ajustado para a tulipa cair pela tela */
+      left: calc(100% * var(--random-x)); /* Aleatoriedade durante a queda */
+      opacity: 0.7;
+  }
+  100% {
+      top: 100%; /* A tulipa toca o fundo da tela */
+      left: calc(100% * var(--random-x)); /* Aleatoriedade ao tocar o solo */
+      opacity: 0;
+  }
+}
+
+/* Movimento de vento (balançando para os lados) */
+@keyframes sway {
+  0% {
+      transform: translateX(0) rotate(0deg);
+  }
+  25% {
+      transform: translateX(-10px) rotate(-5deg);
+  }
+  50% {
+      transform: translateX(10px) rotate(5deg);
+  }
+  75% {
+      transform: translateX(-10px) rotate(-5deg);
+  }
+  100% {
+      transform: translateX(0) rotate(0deg);
+  }
+}
+
+/* Posicionamento das tulipas - aleatório */
+.tulipa:nth-child(1) { 
+  --random-x: 0.05; 
+  animation-delay: 0s;
+}
+.tulipa:nth-child(2) { 
+  --random-x: 0.10; 
+  animation-delay: 1s;
+}
+.tulipa:nth-child(3) { 
+  --random-x: 0.15; 
+  animation-delay: 2s;
+}
+.tulipa:nth-child(4) { 
+  --random-x: 0.20; 
+  animation-delay: 3s;
+}
+.tulipa:nth-child(5) { 
+  --random-x: 0.25; 
+  animation-delay: 4s;
+}
+.tulipa:nth-child(6) { 
+  --random-x: 0.30; 
+  animation-delay: 5s;
+}
+.tulipa:nth-child(7) { 
+  --random-x: 0.35; 
+  animation-delay: 6s;
+}
+.tulipa:nth-child(8) { 
+  --random-x: 0.40; 
+  animation-delay: 7s;
+}
+.tulipa:nth-child(9) { 
+  --random-x: 0.45; 
+  animation-delay: 8s;
+}
+.tulipa:nth-child(10) { 
+  --random-x: 0.50; 
+  animation-delay: 9s;
+}
+.tulipa:nth-child(11) { 
+  --random-x: 0.55; 
+  animation-delay: 10s;
+}
+.tulipa:nth-child(12) { 
+  --random-x: 0.60; 
+  animation-delay: 11s;
+}
+.tulipa:nth-child(13) { 
+  --random-x: 0.65; 
+  animation-delay: 12s;
+}
+.tulipa:nth-child(14) { 
+  --random-x: 0.70; 
+  animation-delay: 13s;
+}
+.tulipa:nth-child(15) { 
+  --random-x: 0.75; 
+  animation-delay: 14s;
+}
+.tulipa:nth-child(16) { 
+  --random-x: 0.80; 
+  animation-delay: 15s;
+}
+.tulipa:nth-child(17) { 
+  --random-x: 0.85; 
+  animation-delay: 16s;
+}
+.tulipa:nth-child(18) { 
+  --random-x: 0.90; 
+  animation-delay: 17s;
+}
+.tulipa:nth-child(19) { 
+  --random-x: 0.95; 
+  animation-delay: 18s;
+}
+
+/* Navegação (Navbar) */
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(253, 255, 121, 0.83);
+  z-index: 1000;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+}
+.h1-container{
+  font-size: 29px;
+  margin-left: 480px;
+}
+nav a {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  margin-left: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Efeito de inflação nos botões */
+nav a:active {
+  transform: scale(1.2); /* Efeito de "inflação" */
+}
+
+/* Galeria de Fotos */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.photo-player {
+  position: relative;
+  margin-right: 20px;
+  max-width: 800px;
+}
+
+#current-photo {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Botões de navegação para fotos */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Linha de separação */
+hr {
+  height: 2px;
+  background-color: rgba(104, 12, 253, 0.8);
+}
+
+/* Título da História */
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+.highlight {
+  color: transparent;
+  background: linear-gradient(to right, #eaff04, rgb(255, 0, 217));
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  position: relative;
+  animation: text-flicker-in-glow 4s linear both;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .photo-player {
+      max-width: 100%;
+  }
+}
+.image-footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.image-footer img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.image-footer img.active {
+  border-color: #ff9800; /* Destaque da imagem selecionada */
+}
+
+p {
+  width: 50%; /* Ajuste a largura conforme necessário */
+  text-align: left; /* Alinha o texto à esquerda */
+  word-wrap: break-word; /* Quebra o texto automaticamente ao atingir a largura do contêiner */
+  white-space: normal; /* Permite que o texto quebre a linha */
+}
+.header1 {
+  background-color: white;
+}
