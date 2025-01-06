@@ -61,7 +61,7 @@
       min-height: 100vh; /* Faz com que a header1 ocupe pelo menos a altura da tela */
       padding-bottom: 40px; /* Garante espaço suficiente para o conteúdo */
     }
-    
+  
     /* Rodapé das imagens */
     .image-footer {
       margin-top: 20px;
