@@ -35,7 +35,7 @@ function generateFooterThumbnails() {
     const footer = document.querySelector('.image-footer');
     for (let i = 1; i <= maxPhotos; i++) {
         const img = document.createElement('img');
-        img.src = `/images/isab${i}.jpg`;
+        img.src = `images/isab${i}.jpg`;
         img.alt = `Miniatura ${i}`;
         img.dataset.index = i; // Associa o índice à miniatura
         img.addEventListener('click', () => {
